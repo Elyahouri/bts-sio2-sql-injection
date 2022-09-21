@@ -31,6 +31,7 @@ services:
     restart: always
     volumes:
       - ./data/db-data:/var/lib/mysql
+      - ./docs/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     networks:
