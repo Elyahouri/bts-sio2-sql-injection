@@ -1,0 +1,6 @@
+/.idea
+.env
+/.env
+/data/db-data/
+/tests/reports/
+
