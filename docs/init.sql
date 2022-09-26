@@ -48,7 +48,11 @@ CREATE TABLE IF NOT EXISTS `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `name`, `password`)
-VALUES (1, 'ela.debonsyeux@mail.dev', 'Ela Debonsyeux', 'password');
+VALUES
+    (1, 'admin@mail.dev', 'Admin', 'password'),
+    (2, 'mouss.tache@mail.dev', 'Mouss Tache', 'password'),
+    (3, 'harry.zona@mail.dev', 'Harry Zona', 'password'),
+    (4, 'judas.bricot@mail.dev', 'Juda Bricot', 'password');
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;

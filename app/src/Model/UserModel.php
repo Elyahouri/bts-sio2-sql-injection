@@ -15,19 +15,19 @@ class UserModel
         $this->bdd = DatabaseService::getConnect();
     }
 
-    public function fetchAll(): array
+    public function search(string $search): array
     {
-        $request = $this->bdd->prepare('SELECT * FROM user');
-        $request->execute();
-        $commentsArray = [];
-
-        foreach ($request->fetchAll() as $value)
+        $sql = "SELECT * FROM user WHERE name LIKE '$search'";
+        var_dump($sql);
+        $query = $this->bdd->query($sql);
+        $users = [];
+        foreach ($query->fetchAll() as $value)
         {
             $user = new User($value["id"],$value["name"],$value["email"],$value["password"]);
-            $usersArray[] = $user;
+            $users[] = $user;
         }
 
-        return $usersArray;
+        return $users;
 
     }
 
