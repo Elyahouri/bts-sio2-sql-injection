@@ -15,6 +15,19 @@ class UserModel
         $this->bdd = DatabaseService::getConnect();
     }
 
+    public function authenticate(string $email, string $password){
+        $sql = "SELECT * FROM user WHERE email='$email' AND password='$password';";
+        //var_dump($sql);
+        $query = $this->bdd->query($sql);
+        $user = $query->fetch();
+        if($user) {
+            return new User(intval($user['id']), $user['email'], $user['name'], $user['password']);
+        } else {
+            return false;
+        }
+
+    }
+
     public function search(string $search): array
     {
         $sql = "SELECT * FROM user WHERE name LIKE '$search'";
@@ -29,12 +42,6 @@ class UserModel
 
         return $users;
 
-    }
-
-    public function create(User $user): void
-    {
-        $request = $this->bdd->prepare('INSERT INTO user(email,name, password) VALUES(:email, :name, :password)');
-        $request->execute(['email'=>$user->getEmail(),'name' => $user->getName(), 'password' => $user->getPassword()]);
     }
 
     public function truncate(){

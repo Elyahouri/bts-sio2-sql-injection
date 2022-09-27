@@ -21,6 +21,10 @@ class UsersController implements ControllerInterface
 
     public function outputEvent()
     {
+        if(!isset($_SESSION["user"])){
+            header("Location: /login");
+        }
+
         $users = [];
         if($this->search){
             $userModel = new userModel();
