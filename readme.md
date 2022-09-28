@@ -8,11 +8,6 @@
 
 `cp _.env.example .env && cp app/_.env.example app/.env`
 
-#### Windows
-
-`COPY _.env.example .env && COPY app/_.env.example app/.env && COPY hacker-site/_.env.example hacker-site/.env`
-
-
 ### Démarrage des services
 
 `docker compose up -d`
@@ -20,3 +15,5 @@
 ### Installation des librairies composer
 
 `docker exec -it secure-sql-injection-app composer install`
+
+
