@@ -32,7 +32,8 @@ class UsersController implements ControllerInterface
         }
         $twig = TwigService::getEnvironment();
         return $twig->render('users/users.html.twig', [
-            "users"=>$users
+            "users"=>$users,
+            "isLogged"=>true
         ]);
     }
 }

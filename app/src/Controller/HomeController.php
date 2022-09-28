@@ -19,6 +19,6 @@ class HomeController implements ControllerInterface
         }
 
         $twig = TwigService::getEnvironment();
-        return $twig->render('home/home.html.twig', []);
+        return $twig->render('home/home.html.twig', ["isLogged"=>true]);
     }
 }

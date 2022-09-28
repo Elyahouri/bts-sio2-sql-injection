@@ -50,7 +50,8 @@ class LoginController implements ControllerInterface
         return $twig->render('login/login.html.twig', [
             "email"=>$this->email,
             "password"=>$this->password,
-            "errors"=>$this->errors
+            "errors"=>$this->errors,
+            "isLogged"=>false
         ]);
     }
 }
