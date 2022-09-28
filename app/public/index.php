@@ -15,6 +15,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $rout
     $route->addRoute(['GET','POST'], '/login', 'App\Controller\LoginController');
     $route->addRoute(['GET','POST'], '/logout', 'App\Controller\LogoutController');
     $route->addRoute(['GET','POST'], '/users', 'App\Controller\UsersController');
+    $route->addRoute(['GET','POST'], '/restore-db', 'App\Controller\RestoreDbController');
     //$route->addRoute('GET', '/lister', 'Quizz\Controller\Questionnaire\ListController');
     //$route->addRoute('GET', '/detail/{id:\d+}', 'Quizz\Controller\Questionnaire\ViewController');
 });
