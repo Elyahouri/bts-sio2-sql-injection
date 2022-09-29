@@ -33,7 +33,11 @@ services:
       - ./data/db-data:/var/lib/mysql
       - ./docs/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app_db
+      #MYSQL_USER: app_db_user
+      #MYSQL_PASSWORD: app_db_password
     networks:
       - dev
   #PHP My Admin
